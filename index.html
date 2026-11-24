@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineCatalogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="marca" href="#">CINE<span>CATALOGO</span></a>
+
+    <form id="busca-form" class="busca-form">
+      <input id="busca" type="search" placeholder="Buscar filmes..." aria-label="Buscar filmes">
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="chave-api" id="chave-area">
+      <label for="chave">Chave de API da TMDB</label>
+      <div>
+        <input id="chave" type="password" placeholder="Cole sua chave aqui">
+        <button id="salvar-chave" type="button">Salvar</button>
+      </div>
+      <small>Obtenha uma chave gratuita em themoviedb.org/settings/api</small>
+    </section>
+
+    <section class="destaque" id="destaque"></section>
+
+    <nav class="tipos" aria-label="Tipo de catalogo">
+      <button class="tipo ativa" type="button" data-tipo="movie">Filmes</button>
+      <button class="tipo" type="button" data-tipo="tv">Series</button>
+    </nav>
+
+    <nav class="categorias" aria-label="Categorias">
+      <button class="categoria ativa" type="button" data-categoria="popular">Populares</button>
+      <button class="categoria" type="button" data-categoria="top_rated">Mais avaliados</button>
+      <button class="categoria" type="button" data-categoria="now_playing">Em cartaz</button>
+      <button class="categoria" type="button" data-categoria="upcoming">Em breve</button>
+    </nav>
+
+    <h1 id="titulo-catalogo">Filmes populares</h1>
+    <div id="catalogo" class="catalogo" aria-live="polite">
+      <p class="mensagem">Informe sua chave da TMDB para carregar o catalogo.</p>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <button id="fechar-modal" class="fechar-modal" type="button" aria-label="Fechar">Fechar</button>
+    <article id="detalhes" class="detalhes"></article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
